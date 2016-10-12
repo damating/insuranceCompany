@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header navbar-left">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <h1><%= link_to 'Ubezpieczenia', "#", class: "navbar-brand" %></h1>
+      </div>
+      <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+        <nav class="menu menu--shylock">
+          <ul class="nav navbar-nav link-effect-7">
+            <li id="about_company_menu"><%= link_to 'O FIRMIE', o_firmie_path %>
+            <li id="offer_menu"><%= link_to 'OFERTA', oferta_path %>
+            <li id="calculator_menu"><%= link_to 'KALKULATOR', kalkulator_path %>
+            <li id="download_menu"><%= link_to 'DO POBRANIA', do_pobrania_path %>
+            <li id="contact_menu"><%= link_to 'KONTAKT', kontakt_path %>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+  </div>
+</nav>
+
+<div class="banner">
+  <div class="banner_info">
+    <div class="container">
+      <div class="col-md-5 header_left"></div>
+      <div class="col-md-7 header_right">
+        <ul>
+          <li><i class="glyphicon glyphicon-phone"></i>ZADZWOŃ DO NAS<span>+12 647 49 37</span>
+          <li><i class="glyphicon glyphicon-envelope"></i>NAPISZ DO NAS
+            <span><a href="mailto:info@example.com">mbupolisa.piastow@op.pl</a></span>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
