@@ -1,11 +1,53 @@
+
+
+
 <div class="news-left">
+
+
+    <div class="col-md-2 affix-sidebar">
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <span class="visible-xs navbar-brand">Rodzaje ubezpieczeń</span>
+          </div>
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav" id="sidenav01">
+              <li class="vertical-menu-element"><a href="#comunication_insurance"> Ubezpieczenia komunikacyjne</a></li>
+              <li class="vertical-menu-element"><a href="#"><span class="glyphicon glyphicon-cog"></span> Ubezpieczenia dla firm</a></li>
+              <li class="vertical-menu-element"><a href="#property_insurance"><span class="glyphicon glyphicon-cog"></span> Ubezpieczenia mienia</a></li>
+              <li class="vertical-menu-element"><a href="#transport_insurance"><span class="glyphicon glyphicon-cog"></span> Ubezpieczenia transportowe (cargo)</a></li>
+              <li class="vertical-menu-element"><a href="#gdf"><span class="glyphicon glyphicon-cog"></span> Ubezpieczenia od nieszczęśliwych wypadków</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+
+  <!--<div class="col-md-2">-->
+    <!--<ul class="nav nav-pills nav-stacked">-->
+      <!--<li class="active"><a href="#">Ubezpieczenie komunikacyjne</a></li>-->
+      <!--<li><a href="#">Ubezpieczenie firmowe</a></li>-->
+      <!--<li><a href="#">Ubezpieczenie mienia</a></li>-->
+      <!--<li><a href="#">Ubezpieczenie transportowe (cargo)</a></li>-->
+      <!--<li><a href="#">Ubezpieczenie od nieszczęśliwych wypadków</a></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
   <div class="container">
-    <h3 class="head">Usługi</h3>
+    <h3 class="agileits-title">Usługi</h3>
 
     <div class="row row_service">
       <div class="col-md-5">
         <div class="date-in">
-          <img class="img-responsive" src="assets/family.jpg" alt="">
+          <img class="img-responsive" src="assets/comunication_insurance2.png" alt="">
           <div class="month-in">
             <span><img src="images/icon1.png" alt=" "></span>
             <p>Consectetuer adipiscing</p>
@@ -13,7 +55,7 @@
         </div>
       </div>
       <div class="col-md-7 col_service">
-        <h4>Ubezpieczenie komunikacyjne</h4>
+        <h4 id="comunication_insurance">Ubezpieczenie komunikacyjne</h4>
         <p>To ubezpieczenie związane z ruchem pojazdów mechanicznych. Możemy je podzielić  na obowiązkowe, czyli takie, do których zawarcia jesteśmy zobowiązani
           z mocy prawa, oraz dobrowolne inaczej mówiąc dodatkowe na przykład ubezpieczenie AC lub nnw czyli takie, o których posiadaniu decydujemy sami.
           Najbardziej  popularnym ubezpieczeniem komunikacyjnym jest ubezpieczenie odpowiedzialności cywilnej posiadaczy pojazdów mechanicznych za szkody spowodowane
@@ -30,7 +72,7 @@
 
     <div class="row row_service">
       <div class="col-md-7 col_service">
-        <h4>Ubezpieczenia mienia</h4>
+        <h4 id="property_insurance">Ubezpieczenia mienia</h4>
         <p>Indywidualne:</p>
         <ul>
           <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Ubezpieczenie budynków i lokali mieszkalnych</li>
@@ -46,7 +88,7 @@
       </div>
       <div class="col-md-5">
         <div class="date-in">
-          <img class="img-responsive" src="assets/family.jpg" alt="">
+          <img class="img-responsive" src="assets/family.png" alt="">
           <div class="month-in">
             <span><img src="images/icon1.png" alt=" "></span>
             <p>Consectetuer adipiscing</p>
@@ -64,10 +106,10 @@
     </div>
     <hr class="featurette-divider">
 
-    <div class="row row_service">
+    <div id="transport_insurance" class="row row_service">
       <div class="col-md-5">
         <div class="date-in">
-          <img class="img-responsive" src="assets/family.jpg" alt="">
+          <img class="img-responsive" src="assets/cargo.png" alt="">
           <div class="month-in">
             <span><img src="images/icon1.png" alt=" "></span>
             <p>Consectetuer adipiscing</p>
@@ -119,4 +161,17 @@
         $('.nav li').removeClass('active');
         $('#offer_menu').addClass('active');
     })
+
+    $(function() {
+        $('a').click(function() {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 120
+                }, 1000);
+                return false;
+            }
+        });
+    });
 </script>

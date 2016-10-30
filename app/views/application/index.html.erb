@@ -48,6 +48,22 @@
   </div>
 </div>
 
+<% unless flash[:notice].nil? && flash[:error].nil? %>
+    <div class="modal show" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" onclick="$('#myModal').removeClass('show')">&times;</button>
+          </div>
+          <div class="modal-body text-center">
+            <% flash.each do |key, value| %>
+                <h4><%= value %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
 
 <div class="about_us">
   <div class="container">
@@ -63,7 +79,7 @@
       zakresem działalności. Dzięki temu zdobywamy zaufanie klientów.
     </p>
     <div class="centered_button">
-      <%= link_to 'Czytaj więcej', "#", class: "btn btn-info" %>
+      <%= link_to 'Napisz do nas', contact_path, class: "btn btn-info" %>
     </div>
   </div>
 </div>
