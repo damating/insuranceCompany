@@ -1,1 +1,1 @@
-# insurance-company
+# insuranceCompany
