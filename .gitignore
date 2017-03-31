@@ -19,3 +19,6 @@ config/database.yml
 public/system
 .idea
 /sftp-config.json
+
+config/secrets.yml
+.byebug_history

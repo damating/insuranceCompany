@@ -4,22 +4,28 @@ class Calculator < MailForm::Base
   attribute :brand,                           :validate => true
   attribute :model,                           :validate => true
   attribute :capacity,                        :validate => true
+  attribute :power,                           :validate => true
   attribute :year,                            :validate => true
-  attribute :registered_zipcode,              :validate => true, :format => { :with => zip_regex_pl }
-  attribute :owner_birth,                     :validate => true
+  attribute :registered_zipcode,              :validate => true, format: { :with => zip_regex_pl }, message: "Wymagany format 00-000"
+  attribute :owner_birth
   attribute :driving_licence_issue_date,      :validate => true
-  attribute :previous_insurance_company,      :validate => true
-  attribute :last_policy_discount,            :validate => true
-  attribute :last_year_damage_amount,         :validate => true
+  attribute :previous_insurance_company
+  attribute :last_policy_discount
+  attribute :last_year_damage_amount
+  attribute :vin,                             :validate => true
+  attribute :pesel
   attribute :contact_name,                    :validate => true
   attribute :email,                           :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :phone_number
 
+  validates :pesel, presence: true, length: { is: 11 }
+
+
   def headers
     {
       :subject => "Obliczenie OC",
-      :to => "paula.grzesiak@gmail.com",
-      :from => %("#{contact_name}" <#{email}>)
+      :to => "mbupolisa.piastow@op.pl",
+      :from => %("#{contact_name}" <mbupolisa.piastow@op.pl>)
     }
   end
 

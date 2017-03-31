@@ -1,7 +1,7 @@
 <div class="contact_page">
   <div class="container">
     <h3 class="head">Kontakt</h3>
-    <!---728x90--->
+
     <div class="col-md-8">
       <%= simple_form_for @contact do |f| %>
           <div class="form-group contact-form">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="col-md-4 contact-grids">
-      <div class=" contact-grid">
+      <div class="contact-grid">
         <div class="contact-grid1">
           <div class="contact-grid2 ">
             <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
@@ -90,11 +90,35 @@
             center: myLatLng
         });
 
+        var contentString = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading">Biuro Ubezpieczeń PARTNER PLUS </h1>'+
+                '<div id="bodyContent">'+
+                '<p><b>Agencja ubezpieczeniowa</b>, znajdująca się na <b>os. Piastów 41</b>, posiada ponad piętnastoletnie doświadczenie w branży. ' +
+                'Specjalizuje się w doborze najkorzystejszych ubezpieczeń dla klientów indywidualnych oraz dla firm.'+
+                '<div class="col-md-6"><img src="assets/biuro1.jpg" alt="Mountain View" style="width:304px;height:228px;"></div>' +
+                '<div class="col-md-6"><img src="assets/biuro2.jpg" alt="Mountain View" style="width:304px;height:228px;"></div>' +
+                '<p>Zobacz na mapie: <a href="https://www.google.com/maps/place/Biuro+Ubezpiecze%C5%84+PARTNER+PLUS/@50.098397,20.0128567,18z/data=!3m1!4b1!4m5!3m4!1s0x47164552d462a9f5:0x565718779057d2d7!8m2!3d50.098397!4d20.013951?hl=pl-US">'+
+                'Klik</a> '+
+                '(last visited June 22, 2009).</p>'+
+                '</div>'+
+                '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
             title: 'Ubezpieczenia'
         });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
     }
 </script>
 <script async defer
