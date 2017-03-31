@@ -1,5 +1,5 @@
 # Ignore database.yml
-config/database.yml
+/config/database.yml
 
 # Ignore bundler config.
 /.bundle
@@ -17,8 +17,8 @@ config/database.yml
 
 #ignore uploaded files
 public/system
-.idea
+/.idea
 /sftp-config.json
 
-config/secrets.yml
-.byebug_history
+/config/secrets.yml
+/.byebug_history
